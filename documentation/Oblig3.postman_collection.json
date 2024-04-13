@@ -1,0 +1,643 @@
+{
+	"info": {
+		"_postman_id": "0e26fb2b-c3ec-402d-b85c-bc64e52f51b0",
+		"name": "Oblig3",
+		"description": "For the API in oblig3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33554707",
+		"_collection_link": "https://interstellar-station-317097.postman.co/workspace/6dc471f2-dcbc-45e6-9c4e-5e421d4b576b/collection/33554707-0e26fb2b-c3ec-402d-b85c-bc64e52f51b0?action=share&source=collection_link&creator=33554707"
+	},
+	"item": [
+		{
+			"name": "assessment-queries",
+			"item": [
+				{
+					"name": "get ALL assessment cards",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8001/api/cards/assessment",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"cards",
+								"assessment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "gets 1 assessment card",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8001/api/cards/assessment/10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"cards",
+								"assessment",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create assessment card",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n  \"card-id\": 102,\r\n  \"card-type\": \"assessment\",\r\n  \"card-category\": \"Assessment artefact\",\r\n  \"card-name\": \"Academic essay\",\r\n  \"card-description\": \"Structured form of writing to answer a question or task based on evidence. \",\r\n  \"card-details\": \"It should have a thesis statement and arguments\"\r\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8001/api/cards/assessment",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"cards",
+								"assessment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update assessment card",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n  \"card-type\": \"assessment\",\r\n  \"card-category\": \"Assessment artefact\",\r\n  \"card-name\": \"Academic essay 2\",\r\n  \"card-description\": \"This card is updated \",\r\n  \"card-details\": \"It should have a thesis statement and arguments 2\",\r\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8001/api/cards/assessment/50",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"cards",
+								"assessment",
+								"50"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete assessment card",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8001/api/cards/assessment/102",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"cards",
+								"assessment",
+								"102"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "gets icon for the category",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "icon",
+									"type": "file",
+									"src": "/C:/Users/justs/Downloads/smiley-happy-svgrepo-com.svg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8001/api/cards/assessment/icon/Who is assessed",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"cards",
+								"assessment",
+								"icon",
+								"Who is assessed"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update icon on category",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "icon",
+									"type": "file",
+									"src": "/C:/Users/justs/Downloads/smiley-happy-svgrepo-com.svg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8001/api/cards/upload/upload-icon/Context",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"cards",
+								"upload",
+								"upload-icon",
+								"Context"
+							],
+							"query": [
+								{
+									"key": "icon",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "upload JSON data to api",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cards\": [\r\n        {\r\n            \"card-id\": 10,\r\n            \"card-type\": \"assessment\",\r\n            \"card-category\": \"The assessor\",\r\n            \"card-description\": \"This is a test\",\r\n            \"card-detail\": \"This is a superb test\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8001/api/cards/upload/upload-json",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"cards",
+								"upload",
+								"upload-json"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "mission-queries",
+			"item": [
+				{
+					"name": "get ALL mission cards",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8001/api/cards/mission",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"cards",
+								"mission"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "gets 1 mission card",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8001/api/cards/mission/89",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"cards",
+								"mission",
+								"89"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create mission card",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n  \"card-id\": 102,\r\n  \"card-type\": \"assessment\",\r\n  \"card-category\": \"Assessment artefact\",\r\n  \"card-name\": \"Academic essay\",\r\n  \"card-description\": \"Structured form of writing to answer a question or task based on evidence. \",\r\n  \"card-details\": \"It should have a thesis statement and arguments\"\r\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8001/api/cards/mission",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"cards",
+								"mission"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update mission card",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n  \"card-type\": \"assessment\",\r\n  \"card-category\": \"Assessment artefact\",\r\n  \"card-name\": \"Academic essay 2\",\r\n  \"card-description\": \"This card is updated \",\r\n  \"card-details\": \"It should have a thesis statement and arguments 2\",\r\n  \"icon\": \"https://picsum.photos/seed/picsum/200/300\"\r\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8001/api/cards/mission/88",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"cards",
+								"mission",
+								"88"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete mission card",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8001/api/cards/mission/90",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"cards",
+								"mission",
+								"90"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user-queries",
+			"item": [
+				{
+					"name": "Register user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"fullName\": \"Test\",\n  \"email\": \"test@example.com\",\n  \"password\": \"P@ssword123\",\n  \"department\": \"Engineering\",\n  \"university\": \"MIT\",\n  \"position\": \"teacher\",\n  \"role\": \"admin\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8001/api/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"test@example.com\",\n  \"password\": \"P@ssword123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8001/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjE2OTk1Zjc2NmYwM2RhZDIzZmY5ZmEiLCJpYXQiOjE3MTI3NTcwOTksImV4cCI6MTcxMjc2MDY5OX0.QSMuE7HqHAHI6RHwd3N4fSeGTsnFSc4ZU5FpADC2-R8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8001/api/auth/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all users",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjE2OTk1Zjc2NmYwM2RhZDIzZmY5ZmEiLCJpYXQiOjE3MTI3NTcwOTksImV4cCI6MTcxMjc2MDY5OX0.QSMuE7HqHAHI6RHwd3N4fSeGTsnFSc4ZU5FpADC2-R8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8001/api/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get one user by ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjE2OTk1Zjc2NmYwM2RhZDIzZmY5ZmEiLCJpYXQiOjE3MTI3NTcwOTksImV4cCI6MTcxMjc2MDY5OX0.QSMuE7HqHAHI6RHwd3N4fSeGTsnFSc4ZU5FpADC2-R8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8001/api/users/66168b8ec2399d00cb759d05",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"users",
+								"66168b8ec2399d00cb759d05"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update user",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"fullName\": \"Test\",\n  \"email\": \"test@example.com\",\n  \"password\": \"P@ssword123\",\n  \"department\": \"Engineering\",\n  \"university\": \"MIT\",\n  \"position\": \"student\",\n  \"role\": \"user\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8001/api/users/66168b8ec2399d00cb759d05",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"users",
+								"66168b8ec2399d00cb759d05"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete user",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MGFlOWExNDVjMmY2NDM4YmIxODIwZSIsImlhdCI6MTcxMjAwMTA5OCwiZXhwIjoxNzE5Nzc3MDk4fQ.Y59CGqiOqam7hjy9jPrY3jibEOhmb-tVCegONyggyAs",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8001/api/users/66168b8ec2399d00cb759d05",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"users",
+								"66168b8ec2399d00cb759d05"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get role",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MGFlOWExNDVjMmY2NDM4YmIxODIwZSIsImlhdCI6MTcxMjAwMTA5OCwiZXhwIjoxNzE5Nzc3MDk4fQ.Y59CGqiOqam7hjy9jPrY3jibEOhmb-tVCegONyggyAs",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8001/api/auth/role",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"auth",
+								"role"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get number of users",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8001/api/users/count",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"users",
+								"count"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

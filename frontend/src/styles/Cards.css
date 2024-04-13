@@ -1,0 +1,6 @@
+.cards-management h1 {
+  font-size: 2rem;
+  margin: 40px 0 15px 0;
+  color: var(--dark-gray);
+  text-align: center;
+}

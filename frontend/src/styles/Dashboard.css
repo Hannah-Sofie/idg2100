@@ -1,0 +1,14 @@
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  width: 100%;
+}
+
+.dashboard-container h1 {
+  font-size: 2rem;
+  margin: 10px;
+  color: var(--dark-gray);
+}
